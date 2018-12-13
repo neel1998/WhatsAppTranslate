@@ -1,7 +1,7 @@
 {
-    "name": "Getting Started Example",
+    "name": "WhatsApp Translate",
     "version": "1.0",
-    "description": "Build an Extension!",
+    "description": "An Extension to Translate any messages in Web WhatsApp to English",
     "permissions": [
         "https://web.whatsapp.com/"
     ],

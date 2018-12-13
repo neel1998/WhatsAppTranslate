@@ -21,11 +21,9 @@ function test() {
 function getText(id) {
 	var cl = document.getElementsByClassName("Tkt2p")[id];
 	var data = cl.getElementsByClassName("_3zb-j ZhF0n")[0];
-	// console.log(data.textContent);
 	getLan(data.textContent, id);
 }
 function getLan(text, id) {
-	// console.log("called");
 	var http = new XMLHttpRequest();
 	var url = 'https://translation.googleapis.com/language/translate/v2/detect?key=AIzaSyDiUqDbtPcv71sScjmlqQb5aDZpSxjV2pQ';
 	var params = new FormData();
@@ -42,7 +40,6 @@ function getLan(text, id) {
 	http.send(params);
 }
 function translate(text, lan, id) {
-	console.log("called");
 	var http = new XMLHttpRequest();
 	var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyDiUqDbtPcv71sScjmlqQb5aDZpSxjV2pQ';
 	var params = new FormData();
@@ -54,9 +51,6 @@ function translate(text, lan, id) {
 	http.onreadystatechange = function() {
     	if(http.status == 200) {
     		var jsonObject = JSON.parse(http.responseText);
-    		// var data = jsonObject.data;
-    		// var trans = data.translations;
-    		// var final = trans[0].translatedText;
     		var final = jsonObject.data.translations[0].translatedText;
     		var cl = document.getElementsByClassName("Tkt2p")[id];
 			var tag = cl.getElementsByClassName("_3zb-j ZhF0n")[0];
